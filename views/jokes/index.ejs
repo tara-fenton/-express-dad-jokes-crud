@@ -1,16 +1,16 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
     <head>
         <title>Jokes</title>
     </head>
     <body>
         <body>
-            <h1>Todos</h1>
+            <h1>Jokes</h1>
             <ul>
-              <% todos.forEach(function(t) { %>
+              <% jokes.forEach(function(j) { %>
                 <li>
-                  <%= t.todo %>
+                  <%= j.joke %>
                     - 
-                  <%= t.done ? 'done' : 'not done' %>
+                  <%= j.funny ? 'funny' : 'not funny' %>
                 </li>
               <% }); %>
             </ul>
