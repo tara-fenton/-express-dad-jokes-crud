@@ -16,15 +16,20 @@ const jokes = [
   },
   {
     id: 134358,
-    joke: "'Hey, dad, did you get a haircut?' 'No, I got them all cut.'",
+    joke: "What kind of music do planets listen to? Nep-tunes.",
     funny: true,
   },
 ];
 
 module.exports = {
   getAll,
+  getOne,
 };
 
 function getAll() {
   return jokes;
+}
+function getOne(id) {
+  // Use the Array.prototype.find iterator method
+  return jokes.find((joke) => joke.id === parseInt(id));
 }

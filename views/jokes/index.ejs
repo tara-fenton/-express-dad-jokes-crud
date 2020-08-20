@@ -8,9 +8,9 @@
             <ul>
               <% jokes.forEach(function(j) { %>
                 <li>
-                  <%= j.joke %>
-                    - 
-                  <%= j.funny ? 'funny' : 'not funny' %>
+                    <a href="/jokes/<%= j.id %>"><%= j.joke %></a>
+                        - 
+                    <%= j.funny ? 'funny' : 'not funny' %>
                 </li>
               <% }); %>
             </ul>
