@@ -6,6 +6,8 @@ module.exports = {
   new: newJoke,
   create,
   deleteJoke,
+  updateJoke,
+  update,
 };
 
 function index(req, res) {
@@ -31,5 +33,16 @@ function create(req, res) {
 
 function deleteJoke(req, res) {
   Joke.deleteOne(req.params.id);
+  res.redirect("/jokes");
+}
+
+function update(req, res) {
+  res.render("jokes/update", {
+    joke: Joke.getOne(req.params.id),
+  });
+}
+
+function updateJoke(req, res) {
+  Joke.update(req.params.id);
   res.redirect("/jokes");
 }

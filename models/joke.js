@@ -26,6 +26,7 @@ module.exports = {
   getOne,
   create,
   deleteOne,
+  update,
 };
 
 function getAll() {
@@ -42,6 +43,10 @@ function create(joke) {
   jokes.push(joke);
 }
 function deleteOne(id) {
+  const idx = jokes.findIndex((joke) => joke.id === parseInt(id));
+  jokes.splice(idx, 1);
+}
+function update(id) {
   const idx = jokes.findIndex((joke) => joke.id === parseInt(id));
   jokes.splice(idx, 1);
 }
