@@ -24,6 +24,7 @@ const jokes = [
 module.exports = {
   getAll,
   getOne,
+  create,
 };
 
 function getAll() {
@@ -32,4 +33,12 @@ function getAll() {
 function getOne(id) {
   // Use the Array.prototype.find iterator method
   return jokes.find((joke) => joke.id === parseInt(id));
+}
+
+function create(joke) {
+  // Add the id
+  joke.id = Date.now() % 1000000;
+  // New jokes wouldn't be done :)
+  joke.funny = true;
+  jokes.push(joke);
 }

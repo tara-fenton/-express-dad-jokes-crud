@@ -3,18 +3,17 @@
         <title>Jokes</title>
     </head>
     <body>
-        <body>
-            <h1>Jokes</h1>
-            <ul>
-              <% jokes.forEach(function(j) { %>
-                <li>
-                    <a href="/jokes/<%= j.id %>"><%= j.joke %></a>
-                        - 
-                    <%= j.funny ? 'funny' : 'not funny' %>
-                </li>
-              <% }); %>
-            </ul>
-          </body>
-        
+        <h1>Jokes</h1>
+        <ul>
+            <% jokes.forEach(function(j) { %>
+            <li>
+                <a href="/jokes/<%= j.id %>"><%= j.joke %></a>
+                    - 
+                <%= j.funny ? 'funny' : 'not funny' %>
+            </li>
+            <% }); %>
+        </ul>
+        <a href="/jokes/new">Add Joke</a>
     </body>
+        
 </html>
