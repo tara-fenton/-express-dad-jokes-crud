@@ -5,6 +5,7 @@ module.exports = {
   show,
   new: newJoke,
   create,
+  deleteJoke,
 };
 
 function index(req, res) {
@@ -25,5 +26,10 @@ function newJoke(req, res) {
 
 function create(req, res) {
   Joke.create(req.body);
+  res.redirect("/jokes");
+}
+
+function deleteJoke(req, res) {
+  Joke.deleteOne(req.params.id);
   res.redirect("/jokes");
 }

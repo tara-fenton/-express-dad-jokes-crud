@@ -25,6 +25,7 @@ module.exports = {
   getAll,
   getOne,
   create,
+  deleteOne,
 };
 
 function getAll() {
@@ -36,9 +37,11 @@ function getOne(id) {
 }
 
 function create(joke) {
-  // Add the id
   joke.id = Date.now() % 1000000;
-  // New jokes wouldn't be done :)
   joke.funny = true;
   jokes.push(joke);
+}
+function deleteOne(id) {
+  const idx = jokes.findIndex((joke) => joke.id === parseInt(id));
+  jokes.splice(idx, 1);
 }

@@ -8,5 +8,6 @@ router.get("/", jokeCtrl.index);
 router.get("/new", jokeCtrl.new);
 router.get("/:id", jokeCtrl.show);
 router.post("/", jokeCtrl.create);
+router.delete("/:id", jokeCtrl.deleteJoke);
 
 module.exports = router;
