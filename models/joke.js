@@ -46,7 +46,8 @@ function deleteOne(id) {
   const idx = jokes.findIndex((joke) => joke.id === parseInt(id));
   jokes.splice(idx, 1);
 }
-function update(id) {
+function update(id, joke) {
   const idx = jokes.findIndex((joke) => joke.id === parseInt(id));
-  jokes.splice(idx, 1);
+  joke.id = parseInt(id);
+  jokes.splice(idx, 1, joke);
 }

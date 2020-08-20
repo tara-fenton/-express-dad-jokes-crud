@@ -4,7 +4,9 @@
     </head>
     <body>
       <h1>Update Joke</h1>
-      <form action="/jokes" method="POST" autocomplete="off">
+      <form action="/jokes/<%= joke.id %>?_method=PUT" method="POST" autocomplete="off">
+        <input type="checkbox" name="funny" <%= joke.funny ? 'checked' : '' %>>
+
         <input type="text" name="joke" value="<%=joke.joke%>" size='600'>
         <button type="submit">Update Joke</button>
       </form>

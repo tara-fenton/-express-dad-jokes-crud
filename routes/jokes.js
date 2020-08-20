@@ -9,6 +9,7 @@ router.get("/new", jokeCtrl.new);
 router.get("/:id", jokeCtrl.show);
 router.post("/", jokeCtrl.create);
 router.delete("/:id", jokeCtrl.deleteJoke);
-router.get("/:id/edit", jokeCtrl.update);
+router.get("/:id/edit", jokeCtrl.edit);
+router.put("/:id", jokeCtrl.update);
 
 module.exports = router;
